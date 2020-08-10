@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <link rel="stylesheet" href="Assets/styles.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <main class="container-xl">
+        <nav class="navbar bg-dark">
+            <a class="navbar-brand" href="waetherDashboard.html">Weather Dashboard</a>
+            <form class="form-inline">
+                <!-- search btn & clear Results -->
+                <input class="form-control mr-sm-2" type="search" placeholder="Enter City" aria-label="Search">
+                <button class="btn btn-dark my-2 my-sm-0" id="weathersubmit" type="submit"><i class="fa fa-search"></i>
+                    Search</button>
+                <button class="btn btn-dark my-2 my-sm-0" id="clear-all">
+                    <i class="fa fa-trash"></i> Clear</button>
+            </form>
+        </nav>
+        <section class="row dashRow">
+            <div class="col-md-4" id="showResults">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Results</strong>
+                        <div class="card-body" id="localstorage">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="card">
+                    <div class="card-header">
+                        <strong> Weather Description </strong>
+                        <div class="card-body" id="weatherDescription">
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Forecast</strong>
+                        <div class="card-body" id="forescast">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+        <footer>
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <h6>Weather Dashboard&copf;</h6>
+                </div>
+            </div>
+        </footer>
+
+    </main>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="Assets/weatherDashboard.js"></script>
+</body>
+
+</html>
