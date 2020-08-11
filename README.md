@@ -18,7 +18,7 @@ Five day forecast
 ```
 
 ## Acceptance Criteria
-
+git
 ```
 
 ```
@@ -31,3 +31,8 @@ The following image demonstrates the application functionality:
 
 ```
 Github Repo :
+https://github.com/ElhamFabe/Weather_Dashboard
+
+Github Deployed:
+https://elhamfabe.github.io/Weather_Dashboard/
+
