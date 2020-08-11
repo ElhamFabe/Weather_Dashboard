@@ -8,6 +8,7 @@ body {
 height: 100vh;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 background: linear-gradient(rgb(254, 245, 5), rgb(223, 147, 6), black);
+background: cover no-repeat center center;
 }
 
 .bg-dark {
@@ -28,4 +29,30 @@ dashRow {
 
 .card-header {
     text-align: center;
+}
+
+.uvGreen{
+    background-color: lime;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.uvYellow{
+    background-color: light yellow;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+.uvRed{
+    background-color: red;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+}
+
+footer {
+   border: 2px solid; 
+   background-color: rgba(143, 146, 146, 0.568);
 }

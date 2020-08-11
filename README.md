@@ -18,20 +18,22 @@ Five day forecast
 ```
 
 ## Acceptance Criteria
-git
+
 ```
 
 ```
 
 The following image demonstrates the application functionality:
 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
+![weather dashboard demo]()
 
 ## Installion
 
-```
+
 Github Repo :
 https://github.com/ElhamFabe/Weather_Dashboard
+
+---
 
 Github Deployed:
 https://elhamfabe.github.io/Weather_Dashboard/

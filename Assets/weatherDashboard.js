@@ -14,7 +14,7 @@ $(document).ready(function () {
 
         console.log("click");
         // Empty search results
-        $('#clear-all').clear();
+        $('#clear-all').empty();
 
         var city = $("#city").val();
 
@@ -23,7 +23,7 @@ $(document).ready(function () {
             //check if city is already in LS
 
             //save city to local storage
-            var storedSearches = JSON.parse(localStorage.getItem(${'#localStorage"})
+            var storedSearches = JSON.parse(localStorage.getItem("localStorage"))
             getWeather(city)
         } else {
             $("error").html('Can not leave city blank' + 'Try again')
@@ -39,7 +39,7 @@ $(document).ready(function () {
         $.ajax({
             url: queryUrl,
             method: "GET"
-        
+
 
         }).then(function (response) {
             // lat & long
@@ -58,15 +58,17 @@ $(document).ready(function () {
                 var date = moment.unix(data.daily[0].dt).format('MMMM Do YYYY');
                 // html containing weather description from search
                 $('#date').text(date)
+                // city name
+                // $('#cityName').text(data.city.name)
                 $('#description').text(data.daily[0].weather[0].description);
+                $('#feelsLike').text(data.daily[0].feels_like)
                 $('#tempMin').text(data.daily[0].temp.min);
                 $('#tempMax').text(data.daily[0].temp.max);
                 $('#humidity').text(data.daily[0].humidity);
                 $('#uvIndex').text(data.daily[0].uvi);
-                if ($('#uvIndex') < 3) {
-                    $('<span/>'), { class: "uvGreen", html: uv }
-
-                }
+                $('#windSpeed').text(data.daily[0].wind_speed)
+                // UV index color change
+                
 
                 var forecastDiv = $('#forecast');
 
@@ -74,12 +76,12 @@ $(document).ready(function () {
                     var htmlStr = ` <h1>${data.daily[i].weather[0].description}</h1>
                 <p>Temperature Min: ${data.daily[i].temp.min}</p>
                 <p>Temparature Max: ${data.daily[i].temp.max}</p>
-                <p>Humidity: ${data.daily[i].humidity}</p>
+                <p>Humidity: ${data.daily[i].humidity} % </p>
                 <p>UV Index: ${data.daily[i].uvi}</p>
                 <p>Wind Speed: ${data.daily[i].wind_speed}</p>`
 
                     forecastDiv.append(htmlStr);
-                    console.log(htmlStr)
+                    // console.log(htmlStr)
                 }
 
             })
