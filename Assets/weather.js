@@ -5,7 +5,6 @@ $(document).ready(function () {
         let recentSearch = localStorage.getItem("recent");
         recentSearches.push(JSON.parse(localStorage.getItem("searches")));
         // list recent searches in results column
-        
         getWeather(recentSearch)
     }
     init()
@@ -78,12 +77,12 @@ $(document).ready(function () {
                 $('#windSpeed').text(data.daily[0].wind_speed)
                 // UV index color change
                 console.log(data.daily[0].uvi)
-                var UvIndexValue = parseInt(data.daily[0].uvi);
-                if (UvIndexValue < 3) {
-                    $('#uvIndex', { class: "uvGreen" }).appendTo ${'#uvIndex' };
-                } else if (UvIndexValue > 3 && UvIndexValue < 7) {
-                    $('#uvIndex', { class: "UvYellow"}).appendTo ${'#uvindex'};
-                }else  $('#uvIndex', { class: "UvRed"}).appendTo ${'#uvindex'};
+                // var UvIndexValue = parseInt(data.daily[0].uvi);
+                // if (UvIndexValue < 3) {
+                //     $('#uvIndex', { class: "uvGreen" }).appendTo ${'#uvIndex' };
+                // } else if (UvIndexValue > 3 && UvIndexValue < 7) {
+
+                // }
 
 
 
