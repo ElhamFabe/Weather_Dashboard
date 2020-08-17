@@ -11,16 +11,20 @@ Five day forecast
 
 
 
-## User Story
+## API
 
 ```
-
+Open weather API : https://openweathermap.org/
 ```
 
-## Acceptance Criteria
+## Technologies Used
 
 ```
-
+Html
+Css 
+Javascript
+jQuery
+API
 ```
 
 The following image demonstrates the application functionality:
