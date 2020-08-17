@@ -8,11 +8,11 @@ body {
 height: 100vh;
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 background: linear-gradient(rgb(254, 245, 5), rgb(223, 147, 6), black);
-background: cover no-repeat center center;
+background: cover;
 }
 
 .bg-dark {
-    /* background-color: transparent !important; */
+    background-color: transparent !important;
     opacity: 1;
     color: black;
     font-size: 20px;
@@ -22,7 +22,6 @@ background: cover no-repeat center center;
 dashRow {
      border: 10px groove;
      margin: 30px;
-     background-color: transparent !important;
      text-align: center;
      align-items: center;
 }

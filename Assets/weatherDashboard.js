@@ -5,7 +5,10 @@ $(document).ready(function () {
         let recentSearch = localStorage.getItem("recent");
         recentSearches.push(JSON.parse(localStorage.getItem("searches")));
         // list recent searches in results column
-        
+        for (var i = 0; i < recentSearch.length; i++) {
+            let liListSearch = $('<li>').text(recentSearch[i]);
+            $('#localStorage').append(liListSearch);
+        }
         getWeather(recentSearch)
     }
     init()
@@ -21,12 +24,14 @@ $(document).ready(function () {
 
         var city = $("#city").val();
 
-        // adding url from opn weather app, city of user choice, units=imperial (farenheit) and api key
         if (city !== '') {
-            //check if city is already in LS
 
             //save city to local storage
             var storedSearches = JSON.parse(localStorage.getItem("localStorage"))
+            if (storedSearches.indexof(city) === -1) {
+                recentSearches.unshift(city);
+                localStorage
+            }
             getWeather(city)
         } else {
             $("error").html('Can not leave city blank' + 'Try again')
@@ -42,6 +47,8 @@ $(document).ready(function () {
         localStorage.setItem("recent", city)
         recentSearches.push(city)
         localStorage.setItem("searches", JSON.stringify(recentSearches))
+        // adding url from open weather app, city of user choice, units=imperial (farenheit) and api key
+
         var queryUrl = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=048259ccf3f84222f1781be5f3d4ba8e";
         console.log(city)
         $.ajax({
@@ -77,13 +84,13 @@ $(document).ready(function () {
                 $('#uvIndex').text(data.daily[0].uvi);
                 $('#windSpeed').text(data.daily[0].wind_speed)
                 // UV index color change
-                console.log(data.daily[0].uvi)
+                // console.log(data.daily[0].uvi)
                 var UvIndexValue = parseInt(data.daily[0].uvi);
                 if (UvIndexValue < 3) {
-                    $('#uvIndex', { class: "uvGreen" }).appendTo ${'#uvIndex' };
+                    $('#uvIndex').addClass('uvGreen')
                 } else if (UvIndexValue > 3 && UvIndexValue < 7) {
-                    $('#uvIndex', { class: "UvYellow"}).appendTo ${'#uvindex'};
-                }else  $('#uvIndex', { class: "UvRed"}).appendTo ${'#uvindex'};
+                    $('uvIndex').addClass('uvYellow');
+                } else $('uvIndex').addClass('uvRed');
 
 
 
@@ -98,7 +105,7 @@ $(document).ready(function () {
                 <p>Wind Speed: ${data.daily[i].wind_speed}</p>`
 
                     forecastDiv.append(htmlStr);
-                    // console.log(htmlStr)
+                    console.log(htmlStr)
                 }
 
             })
