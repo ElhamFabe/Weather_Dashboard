@@ -31,7 +31,7 @@ The following image demonstrates the application functionality:
 
 ![weather dashboard demo]()
 
-## Installion
+## Installation
 
 
 Github Repo :
