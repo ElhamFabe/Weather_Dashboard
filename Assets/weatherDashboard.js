@@ -71,18 +71,22 @@ $(document).ready(function () {
             }).then(function (data) {
                 console.log(data);
                 // var weatherDiv = $('#weatherDescription');
-                var date = moment.unix(data.daily[0].dt).format('MMMM Do YYYY');
+                let date = moment.unix(data.daily[0].dt).format('MMMM Do YYYY');
+                let imgIcon = $('<img>');
+                imgIcon.attr("src", "http://openweathermap.org/img/wn/" + "@2x.png");
+                imgIcon.attr("style", "width:50%");
                 // html containing weather description from search
                 $('#date').text(date)
                 // city name
                 // $('#cityName').text(data.city.name)
                 $('#description').text(data.daily[0].weather[0].description);
-                $('#feelsLike').text(data.daily[0].feels_like)
+                $('#weatherImg').append(imgIcon);
+                $('#feelsLike').text(data.daily[0].feels_like);
                 $('#tempMin').text(data.daily[0].temp.min);
                 $('#tempMax').text(data.daily[0].temp.max);
                 $('#humidity').text(data.daily[0].humidity);
                 $('#uvIndex').text(data.daily[0].uvi);
-                $('#windSpeed').text(data.daily[0].wind_speed)
+                $('#windSpeed').text(data.daily[0].wind_speed);
                 // UV index color change
                 var UvIndexValue = parseInt(data.daily[0].uvi);
                 if (UvIndexValue < 3) {
