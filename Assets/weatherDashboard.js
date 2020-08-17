@@ -84,13 +84,14 @@ $(document).ready(function () {
                 $('#uvIndex').text(data.daily[0].uvi);
                 $('#windSpeed').text(data.daily[0].wind_speed)
                 // UV index color change
-                // console.log(data.daily[0].uvi)
                 var UvIndexValue = parseInt(data.daily[0].uvi);
                 if (UvIndexValue < 3) {
                     $('#uvIndex').addClass('uvGreen')
                 } else if (UvIndexValue > 3 && UvIndexValue < 7) {
                     $('uvIndex').addClass('uvYellow');
                 } else $('uvIndex').addClass('uvRed');
+                console.log(data.daily[0].uvi)
+                console.log(uvIndex)
 
 
 
